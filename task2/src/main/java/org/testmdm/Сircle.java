@@ -2,20 +2,33 @@ package org.testmdm;
 
 import java.util.ArrayList;
 
-public class CircularArray {
+public class Сircle {
     public static void main(String[] args) {
-        Integer n = null; n = initArray(args, 0);
-        Integer m = null; m = initArray(args, 1);
-        if (null == n || null == m) {
-            System.out.println("Error initialization");
-        } else {
-            if (0 >= n) {
-                System.out.println("Not circular array");
+        ArrayList<String[]> masTest = new ArrayList<>();
+        masTest.add(new String[]{"4", "3"});
+        masTest.add(new String[]{"5", "4"});
+        masTest.add(new String[]{"asd", "3"});
+        masTest.add(new String[]{"4", "adas"});
+        masTest.add(new String[]{"asd", "asd"});
+        masTest.add(new String[]{"0", "3"});
+        masTest.add(new String[]{"3", "0"});
+        masTest.add(new String[]{"4", "-3"});
+        masTest.add(new String[]{"5", "-4"});
+        Integer n = 0, m = 0;
+        for (String[] mas: masTest) {
+            n = initArray(mas, 0);
+            m = initArray(mas, 1);
+            if (null == n || null == m) {
+                System.out.println("Error initialization");
             } else {
-                if (0 == m) {
-                    System.out.println("Interval is zero");
+                if (0 >= n) {
+                    System.out.println("Not circular array");
                 } else {
-                    initArray(n, m);
+                    if (0 == m) {
+                        System.out.println("Interval is zero");
+                    } else {
+                        initArray(n, m);
+                    }
                 }
             }
         }

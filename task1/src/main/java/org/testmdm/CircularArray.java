@@ -1,11 +1,17 @@
 package org.testmdm;
 
-import java.util.ArrayList;
-
 public class CircularArray {
     public static void main(String[] args) {
-        Integer n = null; n = initArray(args, 0);
-        Integer m = null; m = initArray(args, 1);
+        try {
+            startLogic(args);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: empty arguments");
+        }
+    }
+
+    public static void startLogic(String[] args) {
+        Integer n = initInteger(args, 0);
+        Integer m = initInteger(args, 1);
         if (null == n || null == m) {
             System.out.println("Error initialization");
         } else {
@@ -21,7 +27,7 @@ public class CircularArray {
         }
     }
 
-    public static Integer initArray(String[] args, int i) {
+    public static Integer initInteger(String[] args, int i) {
         if (0 == i) {
             try {
                 return Integer.parseInt(args[0]);
@@ -48,7 +54,7 @@ public class CircularArray {
         }
         do {
             System.out.print(0 == a % n ? 5 : a % n);
-            a += (m + neg) + n * i;;
+            a += (m + neg) + n * i;
         } while (a % n != 1);
         System.out.println();
     }

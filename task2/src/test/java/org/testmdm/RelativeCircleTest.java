@@ -1,4 +1,4 @@
-package testmdm;
+package org.testmdm;
 
 
 import org.junit.jupiter.api.AfterAll;
